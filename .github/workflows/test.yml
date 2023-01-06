@@ -35,7 +35,7 @@ jobs:
         touch testFile.txt
         result=false
         fname="$(basename $(find . -type f -name *.txt -print -quit))"
-        if [[ "$fname" == "*tF*" ]]; then
+        if [[ "$fname" == *tF* ]]; then
           result=true
         fi
         echo $fname
