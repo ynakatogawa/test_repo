@@ -32,11 +32,13 @@ jobs:
     - name: test3
       working-directory: ./work
       run: |
-        touch testFile.txt
+        touch testFile.txt test0.txt
         result=false
-        fname="$(basename $(find . -type f -name *.txt -print -quit))"
-        if [[ "$fname" == *tF* ]]; then
-          result=true
-        fi
-        echo $fname
-        echo $result
+        fnames="$(basename $(find . -type f -name *.txt))"
+        for fname in $fnames; do
+          if [[ "$fname" == *tF* ]]; then
+            result=true
+            echo $fname
+            echo $result
+          fi
+        done
