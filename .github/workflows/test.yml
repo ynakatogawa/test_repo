@@ -29,3 +29,12 @@ jobs:
         echo "check pwd"
         pwd
         ls -la
+    - name: test3
+      working-directory: ./work
+      run: |
+        touch testFile.txt
+        fname="$(basename $(find . -type f -name *.txt -print -quit))"
+        if [[ "$fname" == "*tF*" ]]; then
+          result=true
+        fi
+        echo $result
