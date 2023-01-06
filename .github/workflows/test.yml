@@ -34,7 +34,7 @@ jobs:
       run: |
         touch testFile.txt test0.txt
         result=false
-        fpaths=$(find . -type f -name *.txt)
+        fpaths=$(find . -type f -name "*.txt")
         for fpath in $fpaths; do
           if [[ "$(basename $fpath)" == *tF* ]]; then
             result=true
