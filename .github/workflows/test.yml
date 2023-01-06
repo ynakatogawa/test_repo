@@ -38,7 +38,7 @@ jobs:
         for fpath in $fpaths; do
           if [[ "$(basename $fpath)" == *tF* ]]; then
             result=true
-            echo $fname
-            echo $result
           fi
+          echo $fpath
+          echo $result
         done
