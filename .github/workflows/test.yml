@@ -42,3 +42,11 @@ jobs:
           echo $fpath
           echo $result
         done
+    - name: test4
+      working-directory: ./work
+      run: |
+        HOGE="/11111,/22222"
+        FUGA=`echo ${HOGE} | sed "s/\\//\\\\\/g"`
+        echo $HOGE
+        echo $FUGA
+
